@@ -69,6 +69,13 @@ index, and Cierzo says "not in this model" rather than inventing a number.
 
 Free software under GPL-3.0. Source: https://github.com/defecador/Cierzo
 
+## Changelog — 0.1.2
+
+Hourly chart: the warmest and coldest hour of the run are labelled again
+(Qt's Canvas silently refuses a numeric font weight, so those two labels
+had never been drawing), labels stay inside the plot, and the "now"
+caption no longer sits on its own marker.
+
 ## Changelog — 0.1.1
 
 Name a GPS position properly. Open-Meteo publishes no reverse geocoding
@@ -86,10 +93,11 @@ offline cache of the last reading, and a cover with refresh.
 
 ## Upload checklist
 
-* [ ] RPM: `RPMS/harbour-cierzo-0.1.1-1.noarch.rpm`
+* [ ] RPM: `RPMS/harbour-cierzo-0.1.2-1.noarch.rpm`
       (noarch — one file covers aarch64 and armv7hl)
 * [ ] Icon: `icons/172x172/harbour-cierzo.png`
-* [ ] Screenshots: capture from a device (see below)
+* [x] Screenshots: packaging/openrepos/screenshots/ (taken on device,
+      Jolla at 1032x2272 — portrait pair plus the 48-hour chart in landscape)
 * [ ] Licence: GPL-3.0
 * [ ] Source URL: https://github.com/defecador/Cierzo
 
@@ -119,7 +127,7 @@ them in a file you source rather than on the command line:
 pip install --user openrepos-webclient
 source ~/openrepos-credentials.sh   # exports OPENREPOS_USERNAME/PASSWORD
 openrepos upload-rpm -n Cierzo -p SailfishOS -c Applications \
-    RPMS/harbour-cierzo-0.1.1-1.noarch.rpm
+    RPMS/harbour-cierzo-0.1.2-1.noarch.rpm
 ```
 
 It was last released in 2023 and automates the live site, so check the

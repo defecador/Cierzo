@@ -1,6 +1,6 @@
 Name:       harbour-cierzo
 Summary:    Surface observation and forecast
-Version:    0.1.1
+Version:    0.1.2
 Release:    1
 License:    GPLv3+
 URL:        https://github.com/defecador/Cierzo
@@ -49,6 +49,11 @@ desktop-file-install --delete-original \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed Sep 09 2026 defecador <57116457+defecador@users.noreply.github.com> 0.1.2-1
+- Hourly chart: the warmest and coldest hour labels never drew, because
+  Qt's Canvas rejects a numeric font weight. Keep labels inside the plot
+  and stop the "now" caption sitting on its own marker.
+
 * Wed Sep 09 2026 defecador <57116457+defecador@users.noreply.github.com> 0.1.1-1
 - Name a GPS position properly: Open-Meteo has no reverse geocoding
   endpoint, so fixes were saved as "Here". Uses a reverse geocoder that

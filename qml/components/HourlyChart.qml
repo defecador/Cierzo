@@ -12,7 +12,7 @@ Canvas {
 
     property real padLeft: Theme.paddingLarge * 2.4
     property real padRight: Theme.paddingMedium
-    property real padTop: Theme.paddingLarge * 1.6
+    property real padTop: Theme.paddingLarge * 2.0
     property real bandHeight: Theme.itemSizeExtraSmall * 0.8   // precipitation band
     property real labelRow: Theme.fontSizeSmall * 2.2
 
@@ -131,15 +131,23 @@ Canvas {
             if (temps[i] > temps[hot]) hot = i
             if (temps[i] < temps[cold]) cold = i
         }
-        ctx.font = "500 " + Theme.fontSizeExtraSmall + "px sans-serif"
+        /* Qt's Canvas parses only keyword font weights — a numeric one voids
+           the whole shorthand and the label never appears. */
+        ctx.font = "bold " + Theme.fontSizeExtraSmall + "px sans-serif"
         ctx.textAlign = "center"
+        var inset = Theme.fontSizeExtraSmall * 1.4
+        var atX = function (n) { return Math.max(left + inset, Math.min(right - inset, X(n))) }
         if (hot > 0) {
             ctx.fillStyle = Wx.tempColor(temps[hot])
-            ctx.fillText(Wx.tempS(temps[hot], us), X(hot), Y(temps[hot]) - Theme.fontSizeSmall)
+            ctx.fillText(Wx.tempS(temps[hot], us), atX(hot),
+                         Math.max(top + Theme.fontSizeExtraSmall * 0.6,
+                                  Y(temps[hot]) - Theme.fontSizeSmall))
         }
         if (cold > 0 && cold !== hot) {
             ctx.fillStyle = Wx.tempColor(temps[cold])
-            ctx.fillText(Wx.tempS(temps[cold], us), X(cold), Y(temps[cold]) + Theme.fontSizeSmall)
+            ctx.fillText(Wx.tempS(temps[cold], us), atX(cold),
+                         Math.min(floorY - Theme.fontSizeExtraSmall * 0.4,
+                                  Y(temps[cold]) + Theme.fontSizeSmall))
         }
 
         /* now */
@@ -151,6 +159,6 @@ Canvas {
         ctx.fillStyle = Theme.highlightColor
         ctx.textAlign = "left"
         ctx.font = tiny + "px sans-serif"
-        ctx.fillText(qsTr("now"), X(0) - Theme.paddingSmall / 2, top - tiny)
+        ctx.fillText(qsTr("now"), X(0) + Theme.pixelRatio * 4.4 + Theme.paddingSmall, top - tiny)
     }
 }
