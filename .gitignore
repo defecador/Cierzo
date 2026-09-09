@@ -1,0 +1,13 @@
+# qmake / sfdk build products
+Makefile
+documentation.list
+.qmake.stash
+.sfdk/
+RPMS/
+SRPMS/
+RPMBUILD/
+installroot/
+
+# Qt Creator
+*.pro.user
+*.pro.user.*

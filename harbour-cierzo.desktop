@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-cierzo
+Exec=sailfish-qml harbour-cierzo
+Name=Cierzo
+Comment=Surface observation and forecast
