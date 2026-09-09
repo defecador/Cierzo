@@ -37,10 +37,10 @@ Page {
             app.fetch(Wx.reverseUrl(la, lo),
                       function (d) {
                           page.message = ""
-                          var r = (d.results && d.results.length > 0) ? d.results[0] : null
-                          app.addPlace(r ? r.name : qsTr("Here"),
-                                       r ? [r.admin1, r.country].filter(function (x) { return !!x }).join(", ")
-                                         : la.toFixed(3) + ", " + lo.toFixed(3),
+                          var name = Wx.reverseName(d)
+                          var sub = Wx.reverseSub(d)
+                          app.addPlace(name ? name : qsTr("Here"),
+                                       sub ? sub : la.toFixed(3) + ", " + lo.toFixed(3),
                                        la, lo)
                           pageStack.pop()
                       },

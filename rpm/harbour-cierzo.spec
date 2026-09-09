@@ -1,6 +1,6 @@
 Name:       harbour-cierzo
 Summary:    Surface observation and forecast
-Version:    0.1.0
+Version:    0.1.1
 Release:    1
 License:    GPLv3+
 URL:        https://github.com/defecador/Cierzo
@@ -49,6 +49,11 @@ desktop-file-install --delete-original \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Wed Sep 09 2026 defecador <57116457+defecador@users.noreply.github.com> 0.1.1-1
+- Name a GPS position properly: Open-Meteo has no reverse geocoding
+  endpoint, so fixes were saved as "Here". Uses a reverse geocoder that
+  exists.
+
 * Wed Sep 09 2026 Guillermo <guillermo@localhost> 0.1.0-1
 - First build: current observation, 48-hour curve, seven-day scale,
   selectable forecast model, saved places, offline last reading.

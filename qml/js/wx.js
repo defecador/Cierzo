@@ -11,6 +11,7 @@
  * ------------------------------------------------------------------ */
 var API = "https://api.open-meteo.com/v1/forecast"
 var GEO = "https://geocoding-api.open-meteo.com/v1"
+var REVGEO = "https://api.bigdatacloud.net/data/reverse-geocode-client"
 
 var MODELS = [
     { id: "best_match",             name: "Best available",     by: "Open-Meteo picks the highest-resolution model covering the place" },
@@ -50,8 +51,20 @@ function forecastUrl(lat, lon, model) {
 function searchUrl(q) {
     return GEO + "/search?count=8&language=en&format=json&name=" + encodeURIComponent(q)
 }
+/* Open-Meteo's geocoder only searches forwards — it has no reverse endpoint —
+   so naming a GPS fix takes a second, equally keyless service. */
 function reverseUrl(lat, lon) {
-    return GEO + "/reverse?language=en&format=json&latitude=" + lat + "&longitude=" + lon
+    return REVGEO + "?latitude=" + lat + "&longitude=" + lon + "&localityLanguage=en"
+}
+function reverseName(d) {
+    return d.city || d.locality || d.principalSubdivision || ""
+}
+function reverseSub(d) {
+    var parts = []
+    if (d.principalSubdivision && d.principalSubdivision !== reverseName(d))
+        parts.push(d.principalSubdivision)
+    if (d.countryName) parts.push(d.countryName)
+    return parts.join(", ")
 }
 
 /* ------------------------------------------------------------------ *

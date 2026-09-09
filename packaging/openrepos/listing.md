@@ -69,6 +69,12 @@ index, and Cierzo says "not in this model" rather than inventing a number.
 
 Free software under GPL-3.0. Source: https://github.com/defecador/Cierzo
 
+## Changelog — 0.1.1
+
+Name a GPS position properly. Open-Meteo publishes no reverse geocoding
+endpoint, so positions were being saved as "Here"; Cierzo now asks a
+service that has one.
+
 ## Changelog — 0.1.0
 
 First release. Current observation in synoptic units, 48-hour temperature
@@ -80,7 +86,7 @@ offline cache of the last reading, and a cover with refresh.
 
 ## Upload checklist
 
-* [ ] RPM: `RPMS/harbour-cierzo-0.1.0-1.noarch.rpm`
+* [ ] RPM: `RPMS/harbour-cierzo-0.1.1-1.noarch.rpm`
       (noarch — one file covers aarch64 and armv7hl)
 * [ ] Icon: `icons/172x172/harbour-cierzo.png`
 * [ ] Screenshots: capture from a device (see below)
@@ -113,7 +119,7 @@ them in a file you source rather than on the command line:
 pip install --user openrepos-webclient
 source ~/openrepos-credentials.sh   # exports OPENREPOS_USERNAME/PASSWORD
 openrepos upload-rpm -n Cierzo -p SailfishOS -c Applications \
-    RPMS/harbour-cierzo-0.1.0-1.noarch.rpm
+    RPMS/harbour-cierzo-0.1.1-1.noarch.rpm
 ```
 
 It was last released in 2023 and automates the live site, so check the
