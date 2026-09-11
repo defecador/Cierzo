@@ -71,6 +71,10 @@ index, and Cierzo says "not in this model" rather than inventing a number.
 
 Free software under GPL-3.0. Source: https://github.com/defecador/Cierzo
 
+## Changelog — 0.1.4
+
+About page: shorter sources section.
+
 ## Changelog — 0.1.3
 
 Runs sandboxed with Internet and Location only. Previous versions declared
@@ -100,7 +104,7 @@ offline cache of the last reading, and a cover with refresh.
 
 ## Upload checklist
 
-* [ ] RPM: `RPMS/harbour-cierzo-0.1.3-1.noarch.rpm`
+* [ ] RPM: `RPMS/harbour-cierzo-0.1.4-1.noarch.rpm`
       (noarch — one file covers aarch64 and armv7hl)
 * [ ] Icon: `icons/172x172/harbour-cierzo.png`
 * [x] Screenshots: packaging/openrepos/screenshots/ (taken on device,
@@ -134,7 +138,7 @@ them in a file you source rather than on the command line:
 pip install --user openrepos-webclient
 source ~/openrepos-credentials.sh   # exports OPENREPOS_USERNAME/PASSWORD
 openrepos upload-rpm -n Cierzo -p SailfishOS -c Applications \
-    RPMS/harbour-cierzo-0.1.3-1.noarch.rpm
+    RPMS/harbour-cierzo-0.1.4-1.noarch.rpm
 ```
 
 It was last released in 2023 and automates the live site, so check the

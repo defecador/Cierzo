@@ -1,6 +1,6 @@
 Name:       harbour-cierzo
 Summary:    Surface observation and forecast
-Version:    0.1.3
+Version:    0.1.4
 Release:    1
 License:    GPLv3+
 URL:        https://github.com/defecador/Cierzo
@@ -49,6 +49,9 @@ desktop-file-install --delete-original \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Sep 11 2026 defecador <57116457+defecador@users.noreply.github.com> 0.1.4-1
+- About page: shorter sources section.
+
 * Fri Sep 11 2026 defecador <57116457+defecador@users.noreply.github.com> 0.1.3-1
 - Declare a sandbox profile asking for Internet and Location only. With
   no declaration, Sailfish applied its default profile of twelve

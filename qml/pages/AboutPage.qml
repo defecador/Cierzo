@@ -33,18 +33,7 @@ Page {
             Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width - Theme.horizontalPageMargin * 2
-                text: qsTr("eltiempo.es publishes no developer interface, so no app can read it "
-                         + "directly. Its Spanish forecasts and every one of its weather warnings "
-                         + "come from AEMET, the Spanish state meteorological agency, which does "
-                         + "publish its data — but only for Spain.")
-                font.pixelSize: Theme.fontSizeExtraSmall
-                color: Theme.primaryColor
-                wrapMode: Text.WordWrap
-            }
-            Label {
-                x: Theme.horizontalPageMargin
-                width: parent.width - Theme.horizontalPageMargin * 2
-                text: qsTr("Cierzo therefore reads Open-Meteo, which serves the national services' "
+                text: qsTr("Cierzo reads Open-Meteo, which serves the national services' "
                          + "own models worldwide and needs no account. Settings lets you name the "
                          + "service you want to trust — ECMWF, Deutscher Wetterdienst, "
                          + "Météo-France, MET Norway, the UK Met Office or NOAA — and the forecast "
