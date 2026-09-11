@@ -5,3 +5,8 @@ Icon=harbour-cierzo
 Exec=sailfish-qml harbour-cierzo
 Name=Cierzo
 Comment=Surface observation and forecast
+
+[X-Sailjail]
+Permissions=Internet;Location
+OrganizationName=harbour-cierzo
+ApplicationName=harbour-cierzo

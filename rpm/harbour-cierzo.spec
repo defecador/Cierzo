@@ -1,6 +1,6 @@
 Name:       harbour-cierzo
 Summary:    Surface observation and forecast
-Version:    0.1.2
+Version:    0.1.3
 Release:    1
 License:    GPLv3+
 URL:        https://github.com/defecador/Cierzo
@@ -49,6 +49,12 @@ desktop-file-install --delete-original \
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Fri Sep 11 2026 defecador <57116457+defecador@users.noreply.github.com> 0.1.3-1
+- Declare a sandbox profile asking for Internet and Location only. With
+  no declaration, Sailfish applied its default profile of twelve
+  permissions, including camera, microphone, Bluetooth, NFC and the
+  user's files, none of which Cierzo uses.
+
 * Wed Sep 09 2026 defecador <57116457+defecador@users.noreply.github.com> 0.1.2-1
 - Hourly chart: the warmest and coldest hour labels never drew, because
   Qt's Canvas rejects a numeric font weight. Keep labels inside the plot

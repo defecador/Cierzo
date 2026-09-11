@@ -42,6 +42,22 @@ this model” rather than a fabricated number.
 If you later want Spain on AEMET itself, that is a second provider in
 `qml/js/wx.js` plus an API key field in Settings; the key is free, by email.
 
+## Permissions
+
+Cierzo runs in the Sailfish sandbox and asks for two permissions:
+
+* **Internet** — forecasts and place search from Open-Meteo, and naming a
+  GPS position through BigDataCloud.
+* **Location** — only when you tap *Use my position*.
+
+Nothing else: no camera, microphone, Bluetooth, NFC, or access to your
+files. Saved places and the cached forecast live in the app's own folder,
+`~/.local/share/harbour-cierzo/harbour-cierzo/`, which every sandboxed app
+gets without asking.
+
+The profile is the `[X-Sailjail]` section of `harbour-cierzo.desktop`.
+Without it, Sailfish applies a default profile of twelve permissions.
+
 ## Build
 
 Every command below is relative to the project root, so start there —
